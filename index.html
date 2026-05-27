@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Christian</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(255,215,0,0.12), transparent 25%),
+        radial-gradient(circle at bottom right, rgba(255,255,255,0.06), transparent 20%),
+        linear-gradient(160deg, #0a0a0a, #121212, #1a1a1a);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      color: white;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background-image:
+        linear-gradient(
+          120deg,
+          transparent 0%,
+          rgba(255,215,0,0.03) 45%,
+          rgba(255,215,0,0.08) 50%,
+          rgba(255,215,0,0.03) 55%,
+          transparent 100%
+        );
+      animation: shine 8s linear infinite;
+    }
+
+    @keyframes shine {
+      from {
+        transform: translateX(-25%) translateY(-25%);
+      }
+
+      to {
+        transform: translateX(25%) translateY(25%);
+      }
+    }
+
+    .card {
+      width: 90%;
+      max-width: 420px;
+      padding: 35px;
+      border-radius: 28px;
+      background: rgba(20,20,20,0.82);
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(255,215,0,0.15);
+      box-shadow:
+        0 0 40px rgba(0,0,0,0.7),
+        0 0 25px rgba(255,215,0,0.08);
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .profile-wrapper {
+      position: relative;
+      width: fit-content;
+      margin: auto;
+      margin-bottom: 22px;
+    }
+
+    .profile-wrapper::before {
+      content: "";
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, gold, #ffb300, #fff0a5);
+      z-index: -1;
+      filter: blur(10px);
+      opacity: 0.7;
+    }
+
+    .profile-pic {
+      width: 145px;
+      height: 145px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #1a1a1a;
+    }
+
+    h1 {
+      font-size: 34px;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+    }
+
+    .subtitle {
+      color: #b8b8b8;
+      margin-bottom: 30px;
+      font-size: 15px;
+    }
+
+    .button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      text-decoration: none;
+      color: white;
+      padding: 16px;
+      border-radius: 16px;
+      margin-bottom: 16px;
+      font-weight: bold;
+      font-size: 16px;
+      transition: 0.25s ease;
+      border: 1px solid rgba(255,255,255,0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .button::before {
+      content: "";
+      position: absolute;
+      width: 120%;
+      height: 100%;
+      background: rgba(255,255,255,0.08);
+      transform: skewX(-25deg) translateX(-120%);
+      transition: 0.5s;
+    }
+
+    .button:hover::before {
+      transform: skewX(-25deg) translateX(120%);
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+    }
+
+    .instagram {
+      background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045);
+      box-shadow: 0 0 18px rgba(253,29,29,0.25);
+    }
+
+    .tiktok {
+      background: linear-gradient(45deg, #111, #202020);
+      box-shadow: 0 0 18px rgba(0,255,255,0.12);
+    }
+
+    .phone {
+      background: linear-gradient(45deg, #11998e, #0575e6);
+      box-shadow: 0 0 18px rgba(5,117,230,0.22);
+    }
+
+    .corner-light {
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.18;
+      z-index: 0;
+    }
+
+    .light1 {
+      background: gold;
+      top: -80px;
+      left: -80px;
+    }
+
+    .light2 {
+      background: #ff7b00;
+      bottom: -100px;
+      right: -100px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="corner-light light1"></div>
+  <div class="corner-light light2"></div>
+
+  <div class="card">
+
+    <div class="profile-wrapper">
+      <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
+    </div>
+
+    <h1>Christian</h1>
+
+    <p class="subtitle">Connect with Christian on social media or call directly.</p>
+
+    <a class="button instagram" href="https://www.instagram.com/davidtekne?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
+      📸 Instagram
+    </a>
+
+    <a class="button tiktok" href="https://www.tiktok.com/@davidtekne?_r=1&_t=ZT-96hQQVzl5bB" target="_blank">
+      🎵 TikTok
+    </a>
+
+    <a class="button phone" href="tel:4058007031">
+      📞 Call Now
+    </a>
+
+  </div>
+
+</body>
+</html>
